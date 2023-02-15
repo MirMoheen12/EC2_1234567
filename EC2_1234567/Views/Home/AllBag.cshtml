@@ -1,0 +1,67 @@
+﻿@model IEnumerable<EC2_1234567.Models.BagStore>
+
+@{
+    ViewData["Title"] = "AllBag";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AllBag</h1>
+
+<p>
+    <a asp-action="AddBag">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManufactureDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+              Image
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufactureDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                    <img style="width:120Px;height:auto" src="~/uploads/images/@item.Image" />
+            </td>
+            <td>
+               
+                @Html.ActionLink("Delete", "DeleteBag", new {  id=item.Bagid })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
