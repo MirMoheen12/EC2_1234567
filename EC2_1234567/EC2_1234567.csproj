@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Theme\icon\" />
     <Folder Include="wwwroot\uploads\images\" />
   </ItemGroup>
 

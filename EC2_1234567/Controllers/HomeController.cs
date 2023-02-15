@@ -43,8 +43,13 @@ namespace EC2_1234567.Controllers
             appDbContext.SaveChanges();
             return View();
         }
+        public IActionResult ModifyApp(int id)
+        {
+            return View();
+        }
 
-        
+
+
 
 
 
