@@ -58,6 +58,7 @@
                     <img style="width:120Px;height:auto" src="~/uploads/images/@item.Image" />
             </td>
             <td>
+                    @Html.ActionLink("Modify", "DeleteApp", new { id=item.softid }) |
                     @Html.ActionLink("Delete", "DeleteApp", new { id=item.softid })
             </td>
         </tr>
